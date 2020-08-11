@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "sigmaTest"
+    }
+  },
+  "defaultProject": "sigmaTest",
+  "cli": {
+    "analytics": false
+  }
 }

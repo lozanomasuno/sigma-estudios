@@ -1,1 +1,136 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,900&display=swap');
+
+$letterSize : 1.1em;
+$lineHeigth: .2;
+$fontWeight: 500;
+$buttonColorHover: #ec6285;
+$mediaQuery: 375px;
+
+h1, h2, h3{
+    font-weight: 700;
+}
+
+.classMain { 
+    width: 100%;
+    height: 40vh;    
+    text-align: center;
+    margin: auto;  
+
+    @media (max-width: $mediaQuery) { 
+        font-size: 1rem;
+        padding: 0;        
+
+        h2 {
+            margin: 0px 0em 1em 0 !important;
+        }
+
+        article {
+            margin: 0px 0em 1em 0;
+            p {
+                visibility: hidden;
+            }
+        }
+        img {       
+            width: auto;
+            height: 30%;     
+        }
+    }
+
+    img{
+        padding: 2.5em;
+    }
+    
+    h2{
+        margin: 0 1em 1em 0;
+    }
+
+    p {
+        color: gray;
+        text-align: center;
+        font-weight: 600;
+        line-height:  $lineHeigth;
+        font-size: $letterSize;        
+    }
+
+}
+.container {
+    width: 70%;
+    height: 80vh;    
+    margin: auto;
+    padding: 0 10px 10px em 0;
+
+    @media (max-width: $mediaQuery) {
+        font-size: 1rem;
+        width: auto;
+
+        img { 
+            padding: initial;      
+            width: auto;
+            height: 302px !important;    
+        }
+
+        form {
+            border-radius: 0px !important;
+            padding: 0 !important;
+            box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.0) !important;
+        }
+
+        .btn-primary,  .btn-primary:active, .btn-primary:visited{            
+            width: 150px;
+        }
+    }
+
+    img {       
+        width: auto;
+        height: 400px;     
+    }
+
+    form {
+        border-radius: 20px;
+        padding: 2em;
+        box-shadow: 10px 10px 35px -3px rgba(0,0,0,0.32);
+
+        p {
+            margin-top: 1em;
+            margin-bottom: 0;
+        }
+
+        select {
+            color: #b1b6bc;
+            font-weight: $fontWeight;
+        }
+
+        input {
+            color: #b1b6bc;
+            font-weight: $fontWeight;
+        }
+
+        .btn-primary,  .btn-primary:active, .btn-primary:visited{ 
+            margin: 1em;
+            padding: 1em;
+            font-size: $letterSize;
+            font-weight: 700;
+            text-transform: uppercase;
+            width: 150px;
+            background-color: #e03b65;
+            border: 1px solid $buttonColorHover;
+            
+            &:hover, :active, :visited {
+                font-weight: bold;
+                background-color: $buttonColorHover;
+              }
+        }
+        
+    }
+
+    p {
+        color: #000;
+        text-align: left;
+        font-weight: 700;
+        font-size: $letterSize;
+    }
+
+
+}
+
+
