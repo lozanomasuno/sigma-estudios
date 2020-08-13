@@ -2,10 +2,11 @@ import { Component, OnInit, Input } from '@angular/core';
 import { DepartmentI, CitiesI } from '../../models/model.interface';
 import { DataService } from '../../services/data.service';
 
+import Swal from 'sweetalert2';
+
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
-  styleUrls: ['./form.component.scss'],
   providers: [DataService],
 })
 export class FormComponent implements OnInit {
@@ -33,7 +34,7 @@ export class FormComponent implements OnInit {
     this.departments = this.dataSvc.getDepartments();
   }
 
-  public onSelect(id: number): void {
+  public onSelectDepartment(id: number): void {
     this.cities = this.dataSvc
       .getCities()
       .filter((filterby) => filterby.depId == id);
@@ -82,6 +83,13 @@ export class FormComponent implements OnInit {
       this.redErrorlabel = 'Por favor complete los campos en rojo*';
       console.error('No Se puede guardar', this.selectedCity);
     } else {
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Your work has been saved',
+        showConfirmButton: false,
+        timer: 1500,
+      });
       console.log('Guardado...', this.selectedCity);
     }
   }

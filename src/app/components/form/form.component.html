@@ -9,7 +9,7 @@
     class="form-control"
     [(ngModel)]="selectedDepartment.id"
     [ngModelOptions]="{ standalone: true }"
-    (change)="onSelect($event.target.value)"
+    (change)="onSelectDepartment($event.target.value)"
     [ngClass]="departmentNameClass"
   >
     <option *ngFor="let department of departments" value="{{ department.id }}" >
@@ -35,7 +35,6 @@
   <input
     [(ngModel)]="inputName"
     [ngClass]="inpuntNameClass"
-    name="name"
     class="form-control"
     type="text"
     maxlength="50"
@@ -47,8 +46,7 @@
   </p>
   <input
     [(ngModel)]="inputMail"
-    [ngClass]="inputEmailClass"
-   
+    [ngClass]="inputEmailClass"   
     class="form-control"
     type="email"
     maxlength="30"

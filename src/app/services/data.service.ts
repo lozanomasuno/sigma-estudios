@@ -1,17 +1,17 @@
 import { Injectable, Input } from '@angular/core';
 import { DepartmentI, CitiesI } from '../models/model.interface';
-import * as depts from './_files/depts.json';
+import * as ApiDepts from './_files/depts.json';
 
 @Injectable()
 export class DataService {
   public departments: DepartmentI[] = [
     {
       id: 1,
-      name: 'Amazonas'
-     },
+      name: 'Amazonas',
+    },
     {
       id: 2,
-      name: 'Atlántico'
+      name: 'Atlántico',
     },
     { id: 3, name: 'Caquetá' },
     { id: 4, name: 'Córdoba' },
@@ -63,10 +63,10 @@ export class DataService {
     },
   ];
 
-  public getDepartments(): DepartmentI[]{
-    return this.departments;
+  public getDepartments(): DepartmentI[] {
+      return this.departments;
   }
-  public getCities(): CitiesI[]{
+  public getCities(): CitiesI[] {
     return this.cities;
   }
   constructor() {}
