@@ -4,6 +4,6 @@ export interface DepartmentI {
 }
 export interface CitiesI{
     id: number;
-    depId: number;
+    depId?: number;
     name: string;
 }

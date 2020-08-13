@@ -56,7 +56,7 @@ export class FormComponent implements OnInit {
     return this.isValid;
   }
 
-  public notAllowEmptyFields(): boolean {
+  public validateBeforeSave(): boolean {
     this.isValid = true;
 
     if (!this.selectedDepartment.id) {
@@ -78,19 +78,21 @@ export class FormComponent implements OnInit {
     return this.isValid;
   }
 
-  public validateBeforeSave(): void {
-    if (!this.notAllowEmptyFields()) {
+  public save(): void {
+    if (!this.validateBeforeSave()) {
       this.redErrorlabel = 'Por favor complete los campos en rojo*';
-      console.error('No Se puede guardar', this.selectedCity);
+      console.log(this.selectedCity);
     } else {
       Swal.fire({
-        position: 'top-end',
         icon: 'success',
         title: 'Your work has been saved',
         showConfirmButton: false,
         timer: 1500,
       });
-      console.log('Guardado...', this.selectedCity);
+      this.selectedDepartment = { id: 0, name: '' };
+      this.inputName = '';
+      this.inputMail = '';
+      this.isValid = false;
     }
   }
 }
