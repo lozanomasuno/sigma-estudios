@@ -85,7 +85,7 @@ export class FormComponent implements OnInit {
     } else {
       Swal.fire({
         icon: 'success',
-        title: 'Your work has been saved',
+        title: 'Tu informaci\u00f3n ha sido recibida satisfactoriamente',
         showConfirmButton: false,
         timer: 1500,
       });
