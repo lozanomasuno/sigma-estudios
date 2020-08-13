@@ -6,8 +6,17 @@ $fontWeight: 500;
 $buttonColorHover: #ec6285;
 $mediaQuery: 375px;
 
+
 h1, h2, h3{
     font-weight: 700;
+}
+.textRed{
+    color: red;
+}
+.errorField {
+    border-color: red !important;
+    border-width: 1px;
+    background-color: #eccaca !important;
 }
 
 .classMain { 
@@ -104,23 +113,22 @@ h1, h2, h3{
             color: #b1b6bc;
             font-weight: $fontWeight;
         }
-
-        .btn-primary,  .btn-primary:active, .btn-primary:visited{ 
-            margin: 1em;
-            padding: 1em;
-            font-size: $letterSize;
-            font-weight: 700;
-            text-transform: uppercase;
-            width: 150px;
-            background-color: #e03b65;
-            border: 1px solid $buttonColorHover;
-            
-            &:hover, :active, :visited {
-                font-weight: bold;
-                background-color: $buttonColorHover;
-              }
-        }
+    }
+    
+    .btn-primary,  .btn-primary:active, .btn-primary:visited{ 
+        margin: 1em;
+        padding: 1em;
+        font-size: $letterSize;
+        font-weight: 700;
+        text-transform: uppercase;
+        width: 150px;
+        background-color: #e03b65;
+        border: 1px solid $buttonColorHover;
         
+        &:hover, :active, :visited {
+            font-weight: bold;
+            background-color: $buttonColorHover;
+          }
     }
 
     p {

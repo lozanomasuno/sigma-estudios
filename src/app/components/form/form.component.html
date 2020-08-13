@@ -1,38 +1,62 @@
-<form action="" method="post" class="form-box">    
-   <p>
-       Departamento*
-   </p>
-   <select class="form-control">
-        <option>Default select</option>
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-   </select>
+<form class="form-box">
+  <label for="" class="textRed" *ngIf="!isValid">{{redErrorlabel}}</label>
+  <p>
+    Departamento*
+  </p>
 
-    <p>
-         Ciudad*
-    </p>
-    <select class="form-control">
-        <option>Default select</option>
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-    </select>
+  
+  <select
+    class="form-control"
+    [(ngModel)]="selectedDepartment.id"
+    [ngModelOptions]="{ standalone: true }"
+    (change)="onSelect($event.target.value)"
+    [ngClass]="departmentNameClass"
+  >
+    <option *ngFor="let department of departments" value="{{ department.id }}" >
+      {{ department.name }}
+    </option>
+  </select>
+  <p>
+    Ciudad*
+  </p>
+  <select
+    class="form-control"
+    [(ngModel)]="selectedCity"
+    [ngClass]="cityNameClass"
+  >
+    <option *ngFor="let city of cities" value="{{ city.id }}">
+      {{ city.name }}
+    </option>
+  </select>
 
-    <p>
-        Nombre*
-    </p>
-    <input class="form-control" type="text">
-    
-    <p>
-        Correo*
-    </p>
-    <input class="form-control" type="email">
-    
-    <div class="d-flex justify-content-center">
-        <button class="btn btn-primary rounded-pill"> 
-           Enviar
-        </button>
-    </div>
+  <p>
+    Nombre*
+  </p>
+  <input
+    [(ngModel)]="inputName"
+    [ngClass]="inpuntNameClass"
+    name="name"
+    class="form-control"
+    type="text"
+    maxlength="50"
+    [ngModelOptions]="{ standalone: true }"
+  />
 
+  <p>
+    Correo*
+  </p>
+  <input
+    [(ngModel)]="inputMail"
+    [ngClass]="inputEmailClass"
+   
+    class="form-control"
+    type="email"
+    maxlength="30"
+    [ngModelOptions]="{ standalone: true }"
+  />
 </form>
+<div class="d-flex justify-content-center">
+  <button class="btn btn-primary rounded-pill" (click)="validateBeforeSave()">
+    Enviar
+  </button>
+</div>
